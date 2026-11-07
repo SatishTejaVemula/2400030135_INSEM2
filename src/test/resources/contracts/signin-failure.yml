@@ -1,0 +1,13 @@
+description: Sign-in API failure case for invalid credentials
+
+request:
+  method: POST
+  url: /ms1/signin
+  headers:
+    Content-Type: application/json
+  body:
+    username: satish
+    password: wrongpassword
+
+response:
+  status: 401

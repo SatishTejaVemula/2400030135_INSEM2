@@ -1,0 +1,25 @@
+
+description: Sign-in API with dynamic JWT token matcher
+
+request:
+  method: POST
+  url: /ms1/signin
+  headers:
+    Content-Type: application/json
+  body:
+    username: satish
+    password: password123
+
+response:
+  status: 200
+  headers:
+    Content-Type: application/json
+  body:
+    token: "sample-token"
+  matchers:
+    body:
+      - path: $.token
+        type: by_regex
+        value: ".+"
+
+
